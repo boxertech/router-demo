@@ -1,0 +1,207 @@
+body{
+  padding-top: .5em;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+a {
+  color: $link-color;
+}
+
+header, footer, section.section-status{
+  display: block;
+}
+header {
+  margin-bottom: .3em;
+}
+
+// Main Container
+.main-container{
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
+}
+
+//Section Container
+.section-container{
+  border: $light-border;
+  padding: 3px;
+  min-height: 50px;
+}
+.section-container-hint {
+  border: $light-border;
+  background-color: $light-grey;
+  min-height: 50px;
+  //width: 20px;
+  position: relative;
+  padding-top: .5em;
+  padding-left: .5em;
+}
+.section-container-hint > .shape{
+  width: 1em;
+  height: 1em;
+  left: 6px;
+  top:100px;
+  fill: $medium-grey;
+  cursor: pointer;
+}
+
+// Section Header
+.section-header{
+  font-weight: bold;
+  color: $slate-blue;
+  margin-bottom: .2em;
+  background-color: darken($light-grey, 2.76%);
+  padding: .1em .2em .1em 0;
+  height: 1.5em;
+}
+.section-header-buttons {
+  float: left;
+  font-weight: normal;
+}
+.section-header-button {
+  border-right: $light-border;
+  background-color: lighten($light-grey, 2.3%);
+  padding: .1em .5em;
+}
+.section-header-button.selected {
+  border-right: $light-border;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  background-color: lighten($light-grey, 10.1%);
+  padding: .1em .5em;
+}
+.section-header-button:first-of-type {
+  border-left: $light-border;
+}
+.section-header-icon {
+  float: right;
+  padding-top: .2em;
+  cursor: pointer;
+}
+
+// Section Body
+.section-body {
+  clear: both;
+}
+
+// Main Body Sections
+#be-main-tree{
+  flex: 2 2 20%;
+  order: 1;
+}
+#be-main-tree-hint{
+  flex: 0 0 2%;
+  order: 1;
+}
+#be-main-workspace{
+  flex: 8 8 80%;
+  order: 0;
+}
+/*  Workspace classes  */
+div.workspace{
+  border: 1px dotted #cccccc;
+}
+div.workspace.empty{
+  padding: 1px; // required to render empty div
+  margin: 1px;
+  width: 20px;
+  height: 20px;
+}
+
+// Toolbar
+/* // //toolbar accordian */
+.haccordion{
+  position: relative;
+  overflow: hidden;
+  transition: all, 0.4s, ease-out, 0.1s;
+}
+.toolbar {
+  min-height: 300px;
+  width: 20px;
+  background-color: darken($medium-grey, 15.4%);
+}
+.toolbar:hover {
+  width: 95px;
+  padding: 4px;
+}
+.toolbar > .label{
+  width: 20px;
+  position: absolute;
+  height: 300px;
+  left: 0;
+  top:0;
+  text-align: center;
+  border-radius: 0;
+}
+.toolbar > .content{
+  width: 80px;
+  position: absolute;
+  height: 300px;
+  left: 20px;
+  top: 0;
+  padding: 4px 4px;
+  font-size: 10px;
+}
+.toolbar > .content > .toolheading{
+  border-top: $regular-border;
+  border-bottom: $regular-border;
+  margin-left: -2px;
+  width: 56px;
+  margin-bottom: 1em;
+}
+.toolbar > .content > .toolitem{
+  text-align: left;
+  white-space: nowrap;
+  margin-bottom: 1em;
+  opacity:0;
+  transition: opacity 0.4s linear;
+
+}
+.toolbar:hover > .content > .toolitem{
+  opacity: 1;
+}
+.toolbar > .content > .toolitem:hover{
+  background-color: #d1d9ff;
+  transition: all, 0.4s, ease-out, 0.1s;
+}
+.toolbar > .content > .toolitem > .tooltext{
+  padding-left: 4px;
+}
+.rotate90{
+  transform: rotate(90deg) scale(1) skew(0deg) translate(0px);
+  transform-origin: left bottom;
+}
+.canvas{
+  //-webkit-flex: 1;
+  flex: 1;
+  height: 300px;
+  background-color: #f5e79e;
+}
+.dragover{
+  border: 1px dotted #b8cdff;
+  background-color: #d1d9ff;
+}
+.mouseover{
+  border: 1px dotted black;
+  background-color: red;
+}
+.selected{
+  border: 1px dotted pink;
+  background-color: blue;
+}
+.loadtest{
+  height: 200px;
+  margin: 1em 0;
+  background: rgba(100,230,230,0.5);
+  border: solid 3px rgb(100,230,230);
+  position: relative;
+  @include loading('loadtest',80,20,20,10);
+}
+*,:before,:after{
+  box-sizing:border-box;
+}

@@ -1,0 +1,37 @@
+@mixin loading($name, $big_radius:50,$little_radius:10,$big_stroke:10,$little_stroke:5,$speed:4s,$res:40){
+  &:before{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: ($big_radius*2) + px;
+    height: ($big_radius*2) + px;
+    z-index: 999;
+    border-radius: 50%;
+    border: solid $big_stroke + px rgba(10,120,255,.5);
+    transform: translate(0- $big_radius + px, 0- $big_radius + px);
+  }
+  &:after{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: $little_radius + px;
+    height: $little_radius + px;
+    z-index: 999;
+    border-radius: 50%;
+    border: solid $little_stroke + px rgba(255,255,255,.8);
+    animation-name: #{$name};
+    animation-duration: $speed;
+    animation-iteration-count: infinite;
+  }
+  @keyframes #{$name} {
+    @for $i from 0 through $res {
+      $x: floor(($big_radius - ($big_stroke/2)) * cos(2 * pi() * ($i/$res)) - ($little_radius/2));
+      $y: floor(($big_radius - ($big_stroke/2)) * sin(2 * pi() * ($i/$res)) - ($little_radius/2));
+      #{($i/$res)*100}% {
+        transform: translate($x + px, $y + px);
+      }
+    }
+  }
+}

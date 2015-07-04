@@ -1,0 +1,112 @@
+/*---------------------------------------------*/
+/*       MIXINS                                */
+/*---------------------------------------------*/
+/* Usage: #somediv { @include border-radius(20px);    */
+.border-radius (@radius: 5px){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+/* Usage: #somediv { .border-radius-custom(20px, 20px, 0px, 0px);    */
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft;
+}
+/* Usage: #somediv { .box-shadow(5px, 5px, 6px, 0.3);    */
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+/* Usage: #somediv { @include transition(all, 0.5s, ease-in);    */
+.transition (@prop: all, @time: 1s, @ease: linear, @delay: 0s) {
+  -webkit-transition: @prop @time @ease @delay;
+  -moz-transition: @prop @time @ease @delay;
+  -o-transition: @prop @time @ease @delay;
+  -ms-transition: @prop @time @ease @delay;
+  transition: @prop @time @ease @delay;
+}
+/* Usage: #somediv { @include transform(5deg, 0.5, 1deg, 0px);    */
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+  -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+/* Usage: #somediv { @include transform-origin(left bottom);    */
+.transform-origin (@value:left top) {
+  -webkit-transform-origin: @value;
+  -moz-transform-origin: @value;
+  -o-transform-origin: @value;
+  -ms-transform-origin: @value;
+  transform-origin: @value;
+}
+/* Usage: #somediv { @include gradient(left, #663333, #333333);    */
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+  background-color: @start;
+  background-image: -webkit-linear-gradient(@origin, @start, @stop);
+  background-image: -moz-linear-gradient(@origin, @start, @stop);
+  background-image: -o-linear-gradient(@origin, @start, @stop);
+  background-image: -ms-linear-gradient(@origin, @start, @stop);
+  background-image: linear-gradient(@origin, @start, @stop);
+}
+/* Usage: #somediv { background-color: BADA55; .quick-gradient(top, 0.2);    */
+.quick-gradient (@origin: left, @alpha: 0.2) {
+  background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+  background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+  background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+  background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+  background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+/* Color Scheme
+  Usage:
+  .one   {color: @base;}
+  .two   {color: @lighter1;}
+  .three {color: @lighter2;}
+  .four  {color: @darker1;}
+  .five  {color: @darker2;}    */
+@base: #663333;
+@lighter1: lighten(spin(@base, 5), 10%);
+@lighter2: lighten(spin(@base, 10), 20%);
+@darker1: darken(spin(@base, -5), 10%);
+@darker2: darken(spin(@base, -10), 20%);
+/* Usage: pre { .wrap }    */
+.wrap() {
+  text-wrap: wrap;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* Usage: .container {@include flexbox();}   */
+.flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* Usage: .container {@include flexflow(column);}   */
+.flexflow(@direction) {
+  -webkit-flex-flow: @direction;
+  -moz-flex-flow: @direction;
+  -ms-flex-flow: @direction;
+  flex-flow: @direction;
+  flex-direction: @direction;
+}
+/* Usage: .item {@include flex(1 200px); @include order(2);}   */
+.flex(@values) {
+  -webkit-box-flex: @values;
+  -moz-box-flex:  @values;
+  -webkit-flex:  @values;
+  -ms-flex:  @values;
+  flex:  @values;
+}
+.order(@val) {
+  -webkit-box-ordinal-group: @val;
+  -moz-box-ordinal-group: @val;
+  -ms-flex-order: @val;
+  -webkit-order: @val;
+  order: @val;
+}

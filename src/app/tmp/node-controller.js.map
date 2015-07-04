@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "node-controller.js",
+  "sourceRoot": "..\\..\\..\\src\\public\\components\\node\\",
+  "sources": [
+    "node-controller.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EACA,OAAO,CAAC,MAAR,CAAe,aAAf,CAA6B,CAAC,UAA9B,CAAyC,gBAAzC,EAA2D;IACzD,QADyD,EAEzD,QAFyD,EAGzD,SAAC,MAAD,EAAS,IAAT,GAAA;AACE,MAAA,MAAM,CAAC,KAAP,GAAe,IAAI,CAAC,KAAL,CAAA,CAAf,CAAA;aACA,OAAO,CAAC,GAAR,CAAY,MAAM,CAAC,KAAnB,EAFF;IAAA,CAHyD;GAA3D,CADA,CAAA;AAAA"
+}
