@@ -1,21 +1,18 @@
 .navbar{
-  margin-bottom: .5em;
   &.navfont{
     font-weight: $regular;
     font-size: $base-font-size;
     text-align: left;
     text-shadow: .5px .5px .5px #ffffff;
   }
-  &.navgradient{
-    background-color: #ffffff;
-    background-image: linear-gradient(to bottom, #ffffff, $light-grey);
-    border-bottom: $light-border;
-    min-height: 25px;
+  &.nav-masthead {
+    background-color: #06af45;
+
+    .navbar-brand {
+      color: white;
+    }
+
   }
-}
-.navbar-brand{
-  padding: 4px 15px;
-  height: 20px;
 }
 .navbar-nav > li > a{
   padding: 4px 15px;

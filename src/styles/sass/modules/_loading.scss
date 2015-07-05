@@ -25,13 +25,13 @@
     animation-duration: $speed;
     animation-iteration-count: infinite;
   }
-  @keyframes #{$name} {
-    @for $i from 0 through $res {
-      $x: floor(($big_radius - ($big_stroke/2)) * cos(2 * pi() * ($i/$res)) - ($little_radius/2));
-      $y: floor(($big_radius - ($big_stroke/2)) * sin(2 * pi() * ($i/$res)) - ($little_radius/2));
-      #{($i/$res)*100}% {
-        transform: translate($x + px, $y + px);
-      }
-    }
-  }
+  //@keyframes #{$name} {
+  //  @for $i from 0 through $res {
+  //    $x: floor(($big_radius - ($big_stroke/2)) * cos(2 * pi() * ($i/$res)) - ($little_radius/2));
+  //    $y: floor(($big_radius - ($big_stroke/2)) * sin(2 * pi() * ($i/$res)) - ($little_radius/2));
+  //    #{($i/$res)*100}% {
+  //      transform: translate($x + px, $y + px);
+  //    }
+  //  }
+  //}
 }
