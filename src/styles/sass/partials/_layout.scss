@@ -27,12 +27,12 @@ header {
 
 //Section Container
 .section-container{
-  border: $light-border;
+  //border: $light-border;
   padding: 3px;
   min-height: 50px;
 }
 .section-container-hint {
-  border: $light-border;
+  //border: $light-border;
   background-color: $light-grey;
   min-height: 50px;
   //width: 20px;
@@ -89,6 +89,18 @@ header {
   clear: both;
 }
 
+.featured {
+  border: 1px solid black;
+  width: 100%;
+  min-width: 300px;
+  min-height: 300px;
+}
+.secondary-feature-container {
+  display: flex;
+}
+.secondary-feature {
+  flex: 1 1 33%;
+}
 // Main Body Sections
 #be-main-tree{
   flex: 2 2 20%;
