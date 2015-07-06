@@ -5,6 +5,7 @@ angular.module('ngRouteDemoApp').controller('mainController', ['ListingService',
     vm.listings = [];
     console.log('mainController.listingService: ', listingService);
     console.log('getFeaturedListings: ', listingService.getFeaturedListings);
+    console.log('getFeaturedListings.results: ', listingService.getFeaturedListings());
     listingService.getFeaturedListings().then(function(listings) {
         console.log("featured listings: ", listings);
         if (listings) {

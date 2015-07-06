@@ -4,7 +4,9 @@
 
   angular.module('ngRouteDemoApp').service('ListingService',['$q', '$timeout', function($q, $timeout){
 
-    this.getFeaturedListings = _getFeaturedListings;
+    this.getFeaturedListings = function() {
+      return _getFeaturedListings();
+    }
 
     this.getSearchListings = _getSearchListings;
 
