@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <nav role="navigation" class="navbar navbar-static-top navbar-default nav-masthead">
+        <nav role="navigation" class="navbar navbar-static-top navbar-default nav-masthead" ng-controller="menuController as nav">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display-->
                 <div class="navbar-header">
@@ -18,13 +18,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand">ngRouter Demo</a>
+                    <a href="#/" class="navbar-brand">ngRouter Demo</a>
                     <!-- Collect the nav links, forms, and other content for toggling-->
                 </div>
                 <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-                    <form class="navbar-form navbar-right" data-role="search">
+                    <form class="navbar-form navbar-right" data-role="search" ng-submit="nav.search(searchTerm)">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="form-control" placeholder="Search" ng-model="searchTerm">
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
@@ -43,7 +43,8 @@
 <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/bower_components/lodash/lodash.js"></script>
 <script type="text/javascript" src="/src/app/app.js"></script>
-<script type="text/javascript" src="/src/app/services/listingService.ts"></script>
-<script type="text/javascript" src="/src/app/menuController.ts"></script>
-<script type="text/javascript" src="/src/app/mainController.ts"></script>
+<script type="text/javascript" src="/src/app/services/listingService.js"></script>
+<script type="text/javascript" src="/src/app/menuController.js"></script>
+<script type="text/javascript" src="/src/app/mainController.js"></script>
+<script type="text/javascript" src="/src/app/listingController.js"></script>
 </html>

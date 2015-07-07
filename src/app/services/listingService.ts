@@ -8,7 +8,13 @@
       return _getFeaturedListings();
     }
 
-    this.getSearchListings = _getSearchListings;
+    this.getSearchListings = function(term) {
+      return _getSearchListings(term);
+    }
+
+    this.getAllListings = function() {
+      return _getSearchListings(null);
+    }
 
     var _getFeaturedListings = function(){
       var deferred = $q.defer();
@@ -29,19 +35,26 @@
     };
 
     var _getSearchListings = function(searchTerms){
+      console.log('listingService.getSearchListings.term: ', searchTerms);
       var deferred = $q.defer();
 
       var results = [];
 
-      $timeout(function() {
-        _data.homes.forEach(function(home) {
-          if (home.city === searchTerms) {
-            results.push(home);
-          }
-        });
+      if (!searchTerms || searchTerms.length == 0) {
+        deferred.resolve(_data.homes);
+      } else {
+        searchTerms = searchTerms.toLowerCase();
 
-        deferred.resolve(results);
-      },0);
+        $timeout(function() {
+          _data.homes.forEach(function(home) {
+            if (home.city.toLowerCase() === searchTerms) {
+              results.push(home);
+            }
+          });
+
+          deferred.resolve(results);
+        },0);
+      }
 
       return deferred.promise;
     };

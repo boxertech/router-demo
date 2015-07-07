@@ -89,18 +89,23 @@ header {
   clear: both;
 }
 
+.ribbon {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+
 .featured {
-  border: 1px solid black;
   width: 100%;
   min-width: 300px;
   min-height: 300px;
 }
-.secondary-feature-container {
-  display: flex;
-}
-.secondary-feature {
-  flex: 1 1 33%;
-}
+//.secondary-feature-container {
+//  display: flex;
+//}
+//.secondary-feature {
+//  flex: 1 1 33%;
+//}
 // Main Body Sections
 #be-main-tree{
   flex: 2 2 20%;
