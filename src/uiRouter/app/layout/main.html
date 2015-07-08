@@ -40,28 +40,8 @@
         </div>
     </section><!--  div.gutter#gutter2-->
     <section class="sidebar">
-        <div class="sidebar-head">
-            <div class="sidebar-close" ng-click="vm.toggleSidebar()">
-                <div class="close-icon">x</div>
-            </div>
-        </div>
-        <div class="sidebar-listing" ng-repeat="listing in vm.listings">
-            <div>
-                <div class="crop">
-                    <img src="src/images/{{listing.image}}" alt="test" >
-                </div>
-                <div class="sidebar-listing-item">
-                    <div class="listing-head">{{listing.price | currency:"$":0}}</div>
-                    <div class="listing-property">{{listing.beds}} Bedrooms</div>
-                    <div class="listing-property">{{listing.baths}} Baths</div>
-                    <div class="listing-property">{{listing.sqft}} Sq. Ft.</div>
-                    <div class="listing-description">
-                        <span class="subhead">Description</span>
-                        <p>{{listing.description}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="sidebar-container" ui-view="sidebarContainer">
 
+        </div>
     </section>
 </div>

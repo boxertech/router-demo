@@ -1,5 +1,5 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-angular.module('uiRouteDemoApp').controller('mainController', ['ListingService', function (listingService) {
+angular.module('uiRouteDemoApp').controller('mainController', ['$state', 'ListingService', function ($state, listingService) {
     var vm = this
 
     vm.primeFeature = {};
@@ -19,12 +19,12 @@ angular.module('uiRouteDemoApp').controller('mainController', ['ListingService',
         }
     });
 
-    listingService.getAllListings().then(function(listings) {
-        console.log("all listings: ", listings);
-        if (listings) {
-            vm.listings = listings;
-        }
-    });
+    //listingService.getAllListings().then(function(listings) {
+    //    console.log("all listings: ", listings);
+    //    if (listings) {
+    //        vm.listings = listings;
+    //    }
+    //});
 
     vm.toggleSidebar = function() {
         //console.log('$document: ', $document);
@@ -34,6 +34,7 @@ angular.module('uiRouteDemoApp').controller('mainController', ['ListingService',
             $(sidebar).removeClass('open');
         } else {
             $(sidebar).addClass('open');
+            $state.go('home.sidebar');
         }
     };
 
