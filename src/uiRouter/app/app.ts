@@ -15,6 +15,14 @@ angular.module('uiRouteDemoApp').config(['$stateProvider', '$urlRouterProvider',
         .state('search', {
             url: '/search',
             templateUrl: 'src/uiRouter/app/layout/listing.html'
+        }).state('home.sidebar', {
+            views: {
+                'sidebarContainer': {
+                    templateUrl: 'src/uiRouter/app/layout/sidebar.html',
+                    controller: 'SidebarController',
+                    controllerAs: 'sidebarCtrl'
+                }
+            }
         });
 }]);
 
