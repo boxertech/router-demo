@@ -1,0 +1,67 @@
+<div class="featured-wrapper" ng-controller="mainController as vm">
+    <div class="ribbon">
+        <span>Featured</span>
+        <div class="sidebar-link" ng-click="vm.toggleSidebar()">more...</div>
+    </div>
+    <section class="featured primary-feature">
+        <div>
+            <img src="src/images/{{vm.primeFeature.image}}" alt="test" >
+            <div class="splash">{{vm.primeFeature.city}}</div>
+            <div class="feature-listing">
+                <div class="feature-head">{{vm.primeFeature.price | currency:"$":0}}</div>
+                <div class="feature-property">{{vm.primeFeature.beds}} Bedrooms</div>
+                <div class="feature-property">{{vm.primeFeature.baths}} Baths</div>
+                <div class="feature-property">{{vm.primeFeature.sqft}} Sq. Ft.</div>
+                <div class="feature-description">
+                    <span class="subhead">Description</span>
+                    <p>{{vm.primeFeature.description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured other-feature-container">
+        <div class="other-feature" ng-repeat="feature in vm.otherFeatured">
+            <div>
+                <div class="crop">
+                    <img src="src/images/{{feature.image}}" alt="test" >
+                </div>
+                <div class="splash">{{feature.city}}</div>
+                <div class="feature-listing">
+                    <div class="feature-head">{{feature.price | currency:"$":0}}</div>
+                    <div class="feature-property">{{feature.beds}} Bedrooms</div>
+                    <div class="feature-property">{{feature.baths}} Baths</div>
+                    <div class="feature-property">{{feature.sqft}} Sq. Ft.</div>
+                    <div class="feature-description">
+                        <span class="subhead">Description</span>
+                        <p>{{feature.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--  div.gutter#gutter2-->
+    <section class="sidebar">
+        <div class="sidebar-head">
+            <div class="sidebar-close" ng-click="vm.toggleSidebar()">
+                <div class="close-icon">x</div>
+            </div>
+        </div>
+        <div class="sidebar-listing" ng-repeat="listing in vm.listings">
+            <div>
+                <div class="crop">
+                    <img src="src/images/{{listing.image}}" alt="test" >
+                </div>
+                <div class="sidebar-listing-item">
+                    <div class="listing-head">{{listing.price | currency:"$":0}}</div>
+                    <div class="listing-property">{{listing.beds}} Bedrooms</div>
+                    <div class="listing-property">{{listing.baths}} Baths</div>
+                    <div class="listing-property">{{listing.sqft}} Sq. Ft.</div>
+                    <div class="listing-description">
+                        <span class="subhead">Description</span>
+                        <p>{{listing.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

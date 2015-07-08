@@ -1,0 +1,18 @@
+﻿#be-main-project-dialog
+  .modal-header
+    h3#project-dialog-header {{modalOptions.headerText}}
+  .modal-body(ng-controller="projectDialogController")
+    .entryRow
+      label#project-dialog-name-label.entryLabel Project Name
+      input#project-dialog-name-textbox.entryTextbox(type="text" data-ng-model="modalOptions.name" placeholder="project name...")
+    .entryRow
+      label#project-dialog-directory-label.entryLabel Directory Path
+      input#project-dialog-directory-textbox.entryFile(type="text" placeholder="directory path..." data-ng-model="modalOptions.directoryPath")
+    .entryRow
+      div#project-dialog-file-tree(ya-treeview ya-id="projectTree" ya-model="model" ya-options="options" ya-context="context")
+        span
+          {{ node.$model.label }}
+
+  .modal-footer
+    button#project-dialog-btn-action.btn(data-ng-click="modalOptions.ok(modalOptions)") {{modalOptions.actionButtonText}}
+    button#project-dialog-btn-cancel.btn(data-ng-click="modalOptions.close()") {{modalOptions.closeButtonText}}

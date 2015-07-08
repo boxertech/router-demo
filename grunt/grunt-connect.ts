@@ -1,4 +1,5 @@
-/// <reference path="../src/d.ts/allClient.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
+
 (function(){
   module.exports = function(grunt){
     var mountFolder = function(connect, dir) {
@@ -7,21 +8,34 @@
 
     grunt.config('connect', {
       options: {
-        port: 8080,
         hostname: '*',
         livereload: true
       },
-      livereload: {
+      ngRoute: {
         options: {
+          port: 8080,
+          base: {path: 'src/ngRoute'},
           middleware: function(connect) {
             return [
-              mountFolder(connect, 'src'),
+              mountFolder(connect, 'src/ngRoute'),
+              mountFolder(connect, '.')
+            ];
+          }
+        }
+      },
+      uiRoute: {
+        options: {
+          port: 8081,
+          middleware: function(connect) {
+            return [
+              mountFolder(connect, 'src/uiRouter'),
               mountFolder(connect, '.')
             ];
           }
         }
       },
       dist: {
+        port: 8080,
         options: {
           middleware: function(connect) {
             return [

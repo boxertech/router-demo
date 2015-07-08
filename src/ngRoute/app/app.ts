@@ -1,4 +1,4 @@
-﻿/// <reference path="../../typings/tsd.d.ts" />
+﻿/// <reference path="../../../typings/tsd.d.ts" />
 
 "use strict";
 
@@ -8,11 +8,11 @@ angular.module('ngRouteDemoApp').config(function($routeProvider){
   $routeProvider
       .when('/', {
           controller: 'mainController',
-          templateUrl: 'app/layout/main.html'
+          templateUrl: 'src/ngRoute/app/layout/main.html'
       })
       .when('/search', {
           controller: 'listingController',
-          templateUrl: 'app/layout/listing.html'
+          templateUrl: 'src/ngRoute/app/layout/listing.html'
       })
       .otherwise({
           redirectTo: '/'

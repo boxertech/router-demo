@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-ng-app="ngRouteDemoApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/sass/site.css">
+</head>
+<body>
+    <div class="container">
+        <nav role="navigation" class="navbar navbar-static-top navbar-default nav-masthead" ng-controller="menuController as nav">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display-->
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle collapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#/" class="navbar-brand">ngRouter Demo</a>
+                    <!-- Collect the nav links, forms, and other content for toggling-->
+                </div>
+                <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                    <form class="navbar-form navbar-right" data-role="search" ng-submit="nav.search(searchTerm)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search" ng-model="searchTerm">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" id="bx-main" ng-view></div>
+    <footer class="container text-center">
+        <p>&copy; 2015 Boxer Technology, L.L.C.</p>
+    </footer>
+</body>
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/bower_components/lodash/lodash.js"></script>
+<script type="text/javascript" src="/src/ngRoute/app/app.js"></script>
+<script type="text/javascript" src="/src/ngRoute/app/services/listingService.js"></script>
+<script type="text/javascript" src="/src/ngRoute/app/menuController.js"></script>
+<script type="text/javascript" src="/src/ngRoute/app/mainController.js"></script>
+<script type="text/javascript" src="/src/ngRoute/app/listingController.js"></script>
+</html>

@@ -1,4 +1,5 @@
-/// <reference path="src/d.ts/allClient.d.ts" />
+/// <reference path="typings/tsd.d.ts" />
+
 
 //var packageJson = require('package.json');
 
@@ -30,7 +31,9 @@
 
         grunt.loadTasks('grunt');
 
-        grunt.registerTask('serve', ['connect:livereload', 'watch:server', 'watch:sass']);
+        grunt.registerTask('serve-ng', ['connect:ngRoute', 'watch:ngRouter', 'watch:sass']);
+
+        grunt.registerTask('serve-ui', ['connect:uiRoute', 'watch:uiRouter', 'watch:sass']);
 
     }
 

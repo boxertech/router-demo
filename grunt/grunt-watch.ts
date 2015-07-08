@@ -1,18 +1,32 @@
-/// <reference path="../src/d.ts/allClient.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 (function(){
   module.exports = function(grunt){
     grunt.config('watch', {
       options: {
-        livereload: true,
+        //livereload: true,
         spawn: false
       },
-      server: {
+      ngRouter: {
         files: [
-          'src/**/*.html',
-          'src/styles/**/*.css',
-          'src/**/*.sass',
-          'src/**/*.js'
-        ]
+          'src/ngRoute/**/*.html',
+          'src/ngRoute/styles/**/*.css',
+          'src/ngRoute/**/*.sass',
+          'src/ngRoute/**/*.js'
+        ],
+        options: {
+          livereload: { port: 35730}
+        }
+      },
+      uiRouter: {
+        files: [
+          'src/uiRouter/**/*.html',
+          'src/uiRouter/styles/**/*.css',
+          'src/uiRouter/**/*.sass',
+          'src/uiRouter/**/*.js'
+        ],
+        options: {
+          livereload: {port: 35731}
+        }
       },
       sass: {
         files: [

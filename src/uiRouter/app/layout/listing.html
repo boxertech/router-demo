@@ -1,0 +1,23 @@
+<div ng-controller="listingController as vm">
+    <div class="ribbon">Search Results</div>
+    <div>Search Terms: <span class="search-terms">{{vm.searchTerm}}</span></div>
+    <section class="search search-listing-container">
+        <div class="search-listing" ng-repeat="listing in vm.listings">
+            <div>
+                <div class="crop">
+                    <img src="src/images/{{listing.image}}" alt="test" >
+                </div>
+                <div class="search-listing-item">
+                    <div class="listing-head">{{listing.price | currency:"$":0}}</div>
+                    <div class="listing-property">{{listing.beds}} Bedrooms</div>
+                    <div class="listing-property">{{listing.baths}} Baths</div>
+                    <div class="listing-property">{{listing.sqft}} Sq. Ft.</div>
+                    <div class="listing-description">
+                        <span class="subhead">Description</span>
+                        <p>{{listing.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--  div.gutter#gutter2-->
+</div>
