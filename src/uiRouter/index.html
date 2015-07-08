@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="ngRouteDemoApp">
+<html data-ng-app="uiRouteDemoApp">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title></title>
@@ -32,19 +32,19 @@
             </div>
         </nav>
     </div>
-    <div class="container" id="bx-main" ng-view></div>
+    <div class="container" id="bx-main" ui-view></div>
     <footer class="container text-center">
         <p>&copy; 2015 Boxer Technology, L.L.C.</p>
     </footer>
 </body>
 <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/bower_components/lodash/lodash.js"></script>
-<script type="text/javascript" src="/src/ngRoute/app/app.js"></script>
-<script type="text/javascript" src="/src/ngRoute/app/services/listingService.js"></script>
-<script type="text/javascript" src="/src/ngRoute/app/menuController.js"></script>
-<script type="text/javascript" src="/src/ngRoute/app/mainController.js"></script>
-<script type="text/javascript" src="/src/ngRoute/app/listingController.js"></script>
+<script type="text/javascript" src="/app/app.js"></script>
+<script type="text/javascript" src="/app/services/listingService.js"></script>
+<script type="text/javascript" src="/app/menuController.js"></script>
+<script type="text/javascript" src="/app/mainController.js"></script>
+<script type="text/javascript" src="/app/listingController.js"></script>
 </html>

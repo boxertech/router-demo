@@ -1,8 +1,8 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 (function() {
   'use strict';
 
-  angular.module('ngRouteDemoApp').service('ListingService',['$q', '$timeout', function($q, $timeout){
+  angular.module('uiRouteDemoApp').service('ListingService',['$q', '$timeout', function($q, $timeout){
 
     this.getFeaturedListings = function() {
       return _getFeaturedListings();

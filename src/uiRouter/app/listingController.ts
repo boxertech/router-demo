@@ -1,5 +1,5 @@
-/// <reference path="../../typings/tsd.d.ts" />
-angular.module('ngRouteDemoApp').controller('listingController', ['ListingService', '$location', function (listingService, $location) {
+/// <reference path="../../../typings/tsd.d.ts" />
+angular.module('uiRouteDemoApp').controller('listingController', ['ListingService', '$location', function (listingService, $location) {
     var vm = this
 
     vm.searchTerm = $location.search()['term'];

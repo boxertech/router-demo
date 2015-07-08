@@ -1,5 +1,5 @@
-/// <reference path="../../typings/tsd.d.ts" />
-angular.module('ngRouteDemoApp').controller('mainController', ['ListingService', function (listingService) {
+/// <reference path="../../../typings/tsd.d.ts" />
+angular.module('uiRouteDemoApp').controller('mainController', ['ListingService', function (listingService) {
     var vm = this
 
     vm.primeFeature = {};
