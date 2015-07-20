@@ -12,15 +12,16 @@
     "mean"
   ],
   "dependencies": {
-    "angular": "1.4.1",
-    "angular-route": "~1.4.1",
     "bootstrap": "~3.3.5",
     "lodash": "~3.10.0",
-    "jquery": "~2.1.4",
     "angular-google-maps": "~2.1.5",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "angular": "1.4.x",
+    "angular-route": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-animate": "1.4.x"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.1"
+    "angular-mocks": "1.4.x"
   }
 }

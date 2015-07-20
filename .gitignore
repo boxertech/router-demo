@@ -37,3 +37,4 @@ src/**/*.css
 grunt/**/*.js
 grunt/**/*.map
 *.js
+.DS_Store
