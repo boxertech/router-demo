@@ -1,7 +1,7 @@
-<div class="featured-wrapper" ng-controller="mainController as vm">
+<div class="featured-wrapper" ng-controller="MainController as vm">
     <div class="ribbon">
         <span>Featured</span>
-        <div class="sidebar-link" ng-click="vm.toggleSidebar()">more...</div>
+        <div class="sidebar-link" ng-click="vm.sidebarOpen = !vm.sidebarOpen">more...</div>
     </div>
     <section class="featured primary-feature">
         <div>
@@ -39,9 +39,9 @@
             </div>
         </div>
     </section><!--  div.gutter#gutter2-->
-    <section class="sidebar">
+    <section class="sidebar" ng-class="{open: vm.sidebarOpen}">
         <div class="sidebar-head">
-            <div class="sidebar-close" ng-click="vm.toggleSidebar()">
+            <div class="sidebar-close" ng-click="vm.sidebarOpen = !vm.sidebarOpen">
                 <div class="close-icon">x</div>
             </div>
         </div>

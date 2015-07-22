@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/tsd.d.ts" />
 angular.module('ngRouteDemoApp').controller('menuController', ['$location', function ($location) {
 
   var vm = this;
