@@ -13,7 +13,20 @@
     }
 
     this.getAllListings = function() {
-      return _getSearchListings(null);
+      //return _getAllListings();
+      console.log('listingService.getAllListings');
+      var deferred = $q.defer();
+
+      var results = [];
+
+
+      $timeout(function() {
+        console.log('not search terms, resolving');
+        deferred.resolve(_data.homes);
+
+      },0);
+
+      return deferred.promise;
     }
 
     var _getFeaturedListings = function(){
@@ -40,12 +53,14 @@
 
       var results = [];
 
-      if (!searchTerms || searchTerms.length == 0) {
-        deferred.resolve(_data.homes);
-      } else {
-        searchTerms = searchTerms.toLowerCase();
 
-        $timeout(function() {
+      $timeout(function() {
+        if (!searchTerms || searchTerms.length == 0) {
+          console.log('not search terms, resolving');
+          deferred.resolve(_data.homes);
+        } else {
+          console.log('else path, search terms: ', searchTerms);
+          searchTerms = searchTerms.toLowerCase();
           _data.homes.forEach(function(home) {
             if (home.city.toLowerCase() === searchTerms) {
               results.push(home);
@@ -53,8 +68,25 @@
           });
 
           deferred.resolve(results);
-        },0);
-      }
+        }
+
+      },0);
+
+      return deferred.promise;
+    };
+
+    var _getAllListings = function(){
+      console.log('listingService.getAllListings');
+      var deferred = $q.defer();
+
+      var results = [];
+
+
+      $timeout(function() {
+          console.log('not search terms, resolving');
+          deferred.resolve(_data.homes);
+
+      },0);
 
       return deferred.promise;
     };

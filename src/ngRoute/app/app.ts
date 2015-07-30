@@ -11,7 +11,7 @@ angular.module('ngRouteDemoApp').config(function($routeProvider){
           templateUrl: 'src/ngRoute/app/layout/main.html'
       })
       .when('/search', {
-          controller: 'listingController',
+          controller: 'ListingController',
           templateUrl: 'src/ngRoute/app/layout/listing.html'
       })
       .otherwise({

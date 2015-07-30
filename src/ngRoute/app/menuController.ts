@@ -1,5 +1,5 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-angular.module('ngRouteDemoApp').controller('menuController', ['$location', function ($location) {
+angular.module('ngRouteDemoApp').controller('MenuController', ['$location', function ($location) {
 
   var vm = this;
   vm.search = function(searchTerm) {
