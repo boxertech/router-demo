@@ -13,20 +13,7 @@
     }
 
     this.getAllListings = function() {
-      //return _getAllListings();
-      console.log('listingService.getAllListings');
-      var deferred = $q.defer();
-
-      var results = [];
-
-
-      $timeout(function() {
-        console.log('not search terms, resolving');
-        deferred.resolve(_data.homes);
-
-      },0);
-
-      return deferred.promise;
+      return _getSearchListings(null);
     }
 
     var _getFeaturedListings = function(){
@@ -48,7 +35,6 @@
     };
 
     var _getSearchListings = function(searchTerms){
-      console.log('listingService.getSearchListings.term: ', searchTerms);
       var deferred = $q.defer();
 
       var results = [];
@@ -56,10 +42,9 @@
 
       $timeout(function() {
         if (!searchTerms || searchTerms.length == 0) {
-          console.log('not search terms, resolving');
+          //no search terms, return everything
           deferred.resolve(_data.homes);
         } else {
-          console.log('else path, search terms: ', searchTerms);
           searchTerms = searchTerms.toLowerCase();
           _data.homes.forEach(function(home) {
             if (home.city.toLowerCase() === searchTerms) {
@@ -69,22 +54,6 @@
 
           deferred.resolve(results);
         }
-
-      },0);
-
-      return deferred.promise;
-    };
-
-    var _getAllListings = function(){
-      console.log('listingService.getAllListings');
-      var deferred = $q.defer();
-
-      var results = [];
-
-
-      $timeout(function() {
-          console.log('not search terms, resolving');
-          deferred.resolve(_data.homes);
 
       },0);
 

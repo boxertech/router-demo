@@ -6,13 +6,9 @@ angular.module('ngRouteDemoApp').controller('ListingController', ['ListingServic
 
     vm.listings = [];
     console.log('listingController.searchTerm: ', vm.searchTerm);
-    //console.log('getFeaturedListings: ', listingService.getFeaturedListings);
-    //console.log('getFeaturedListings.results: ', listingService.getFeaturedListings());
     listingService.getSearchListings(vm.searchTerm).then(function(listings) {
-        console.log("search listings: ", listings);
         if (listings) {
             vm.listings = listings;
-            console.log('search listings: ', vm.listings);
         }
     });
 
